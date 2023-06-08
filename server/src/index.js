@@ -9,9 +9,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Mongo connect
+// Mongo connection
 mongoose.connect(
-  "mongodb+srv://paresiqbal:CJnq3lhjDRJXBWHx@recipes.sd8s4ft.mongodb.net/?retryWrites=true&w=majority"
+  "mongodb+srv://paresiqbal:CJnq3lhjDRJXBWHx@recipes.sd8s4ft.mongodb.net/recipes?retryWrites=true&w=majority"
 );
 
 // Running porst
