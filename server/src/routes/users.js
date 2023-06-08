@@ -15,7 +15,14 @@ router.post("/register", async (req, res) => {
   // Find username in modal
   const user = await UserModel.findOne({ username });
 
-  res.json(user);
+  if (user) return res.json({ message: "User already exists !" });
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  // Add new user and hashed the password
+  const newUser = new UserModel({ username, password: hashedPassword });
+  await newUser.save();
+
+  res.json({ message: "Registered Successfully" });
 });
 
 router.post("/login");
