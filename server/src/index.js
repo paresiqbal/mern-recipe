@@ -9,4 +9,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Mongo connect
+mongoose.connect(
+  "mongodb+srv://paresiqbal:CJnq3lhjDRJXBWHx@recipes.sd8s4ft.mongodb.net/?retryWrites=true&w=majority"
+);
+
+// Running porst
 app.listen(3001, () => console.log("Server Running"));
