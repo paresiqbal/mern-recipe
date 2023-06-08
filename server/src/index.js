@@ -12,6 +12,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Router
+app.use("/auth", userRouter);
+
 // Mongo connection
 mongoose.connect(
   "mongodb+srv://paresiqbal:CJnq3lhjDRJXBWHx@recipes.sd8s4ft.mongodb.net/recipes?retryWrites=true&w=majority"
