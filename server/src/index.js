@@ -3,6 +3,9 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 
+// Route
+import { userRouter } from "./routes/users.js";
+
 const app = express();
 
 // Middleware
