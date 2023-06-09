@@ -12,7 +12,7 @@ export default function Register() {
         username,
         password,
       });
-      alert("Login Success");
+      alert("Register complete");
     } catch (error) {
       console.error(error);
     }
