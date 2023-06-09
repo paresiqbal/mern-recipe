@@ -14,21 +14,25 @@ export default function Auth() {
 
   return (
     <div className="container">
-      <div>
+      {activeTab === "login" ? <Login /> : <Register />}
+      <div className="flex gap-48 justify-center text-white p-4 rounded-md font-bold">
         <button
           onClick={() => handleTabChange("login")}
-          className={activeTab === "login" ? "active" : ""}
+          className={`bg-gray-200 px-4 py-2 rounded ${
+            activeTab === "login" ? "bg-base-red text-white" : ""
+          }`}
         >
           Login
         </button>
         <button
           onClick={() => handleTabChange("register")}
-          className={activeTab === "register" ? "active" : ""}
+          className={`bg-gray-200 px-4 py-2 rounded ${
+            activeTab === "register" ? "bg-base-red text-white" : ""
+          }`}
         >
           Register
         </button>
       </div>
-      {activeTab === "login" ? <Login /> : <Register />}
     </div>
   );
 }
