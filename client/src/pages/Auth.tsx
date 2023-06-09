@@ -13,7 +13,7 @@ export default function Auth() {
   };
 
   return (
-    <div className="container">
+    <div className="container lg:w-min">
       {activeTab === "login" ? <Login /> : <Register />}
       <div className="flex gap-48 justify-center text-white p-4 rounded-md font-bold">
         <button
