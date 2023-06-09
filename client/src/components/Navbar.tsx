@@ -4,7 +4,12 @@ import { Link, NavLink } from "react-router-dom";
 // Assests
 import home from "../assets/home.svg";
 
+// Library
+import { useCookies } from "react-cookie";
+
 export default function Navbar() {
+  const [cookies, setCookies] = useCookies();
+
   return (
     <nav className="flex items-center justify-between p-4 shadow-sm">
       <NavLink
@@ -18,12 +23,16 @@ export default function Navbar() {
       <div className="flex items-center justify-end gap-4 text-gray-900 font-semibold">
         <Link to={"/create-recipe"}>Create</Link>
         <Link to={"/save-recipe"}>Saved</Link>
-        <Link
-          to={"/Auth"}
-          className="font-bold text-orange-500 py-2 px-4 hover:outline outline-orange-500 rounded-md"
-        >
-          Login
-        </Link>
+        {!cookies.access_token ? (
+          <Link
+            to={"/Auth"}
+            className="font-bold text-orange-500 py-2 px-4 hover:outline outline-orange-500 rounded-md"
+          >
+            Login
+          </Link>
+        ) : (
+          <button>Logout</button>
+        )}
       </div>
     </nav>
   );
