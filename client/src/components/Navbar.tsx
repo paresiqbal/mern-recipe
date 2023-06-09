@@ -19,7 +19,7 @@ export default function Navbar() {
         <Link to={"/create-recipe"}>Create</Link>
         <Link to={"/save-recipe"}>Saved</Link>
         <Link
-          to={"/auth"}
+          to={"/Auth"}
           className="font-bold text-orange-500 py-2 px-4 hover:outline outline-orange-500 rounded-md"
         >
           Login

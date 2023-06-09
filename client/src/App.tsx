@@ -7,6 +7,7 @@ import MainLayout from "./layout/MainLayout";
 // Pages
 import Error from "./pages/Error";
 import Dashboard from "./pages/Dashboard";
+import Auth from "./pages/Auth";
 
 // Router setup
 const router = createBrowserRouter([
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Dashboard />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/Auth",
+        element: <Auth />,
         errorElement: <Error />,
       },
     ],
