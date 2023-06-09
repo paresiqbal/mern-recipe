@@ -1,3 +1,7 @@
 export default function Register() {
-  return <div>Register</div>;
+  return (
+    <form>
+      <label htmlFor=""></label>
+    </form>
+  );
 }
