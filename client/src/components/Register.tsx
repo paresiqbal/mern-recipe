@@ -1,11 +1,28 @@
 import { useState } from "react";
+import axios from "axios";
 
 export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const registerSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    try {
+      await axios.post("http://localhost:3001/auth/register", {
+        username,
+        password,
+      });
+      alert("Login Success");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <form className="p-10 rounded-md bg-gray-100 flex flex-col gap-2 my-8">
+    <form
+      onSubmit={registerSubmit}
+      className="p-10 rounded-md bg-gray-100 flex flex-col gap-2 my-8"
+    >
       <h1 className="font-bold text-3xl text-center">Register</h1>
       <div className="flex flex-col gap-2">
         <label htmlFor="username">Username</label>
