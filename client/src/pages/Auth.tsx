@@ -8,6 +8,7 @@ import Register from "../components/Register";
 export default function Auth() {
   const [activeTab, setActiveTab] = useState("login");
 
+  // Toggle tabs
   const handleTabChange = (tab: any) => {
     setActiveTab(tab);
   };
