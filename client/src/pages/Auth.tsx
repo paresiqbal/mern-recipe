@@ -13,7 +13,7 @@ export default function Auth() {
   };
 
   return (
-    <div>
+    <div className="container">
       <div>
         <button
           onClick={() => handleTabChange("login")}

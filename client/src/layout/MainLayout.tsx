@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 export default function MainLayout() {
   return (
     <div className="min-h-screen">
-      <main>
+      <main className="text-gray-800">
         <Navbar />
         <Outlet />
       </main>
