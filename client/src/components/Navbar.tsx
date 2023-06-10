@@ -31,7 +31,9 @@ export default function Navbar() {
             Login
           </Link>
         ) : (
-          <button>Logout</button>
+          <button className="font-bold text-base-red py-2 px-4 hover:outline outline-red rounded-md">
+            Logout
+          </button>
         )}
       </div>
     </nav>
