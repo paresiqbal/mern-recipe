@@ -20,7 +20,7 @@ export default function Auth() {
         <button
           onClick={() => handleTabChange("login")}
           className={`bg-gray-200 px-4 py-2 rounded ${
-            activeTab === "login" ? "bg-base-red text-white" : ""
+            activeTab === "login" ? "bg-teal-500 text-white" : ""
           }`}
         >
           Login
@@ -28,7 +28,7 @@ export default function Auth() {
         <button
           onClick={() => handleTabChange("register")}
           className={`bg-gray-200 px-4 py-2 rounded ${
-            activeTab === "register" ? "bg-base-red text-white" : ""
+            activeTab === "register" ? "bg-sky-500 text-white" : ""
           }`}
         >
           Register
