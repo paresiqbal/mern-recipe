@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 
 // Route
 import { userRouter } from "./routes/users.js";
+import { recipeRouter } from "./routes/recipes.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cors());
 
 // Router
 app.use("/auth", userRouter);
+app.use("/recipes", recipeRouter);
 
 // Mongo connection
 mongoose.connect(
