@@ -1,14 +1,22 @@
 // RRD
 import { Link, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 // Assests
 import home from "../assets/home.svg";
 
-// Library
-import { useCookies } from "react-cookie";
-
 export default function Navbar() {
-  const [cookies, setCookies] = useCookies();
+  const [cookies, setCookies] = useCookies(["access_token"]);
+  const navigate = useNavigate();
+
+  // Logout function
+  const Logout = () => {
+    setCookies("access_token", "");
+    window.localStorage.removeItem("userID");
+
+    navigate("/Auth");
+  };
 
   return (
     <nav className="flex items-center justify-between p-4 shadow-sm">
@@ -31,7 +39,10 @@ export default function Navbar() {
             Login
           </Link>
         ) : (
-          <button className="font-bold text-base-red py-2 px-4 hover:outline outline-red rounded-md">
+          <button
+            className="font-bold text-base-red py-2 px-4 hover:outline outline-red rounded-md"
+            onClick={Logout}
+          >
             Logout
           </button>
         )}
