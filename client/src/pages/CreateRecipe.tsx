@@ -28,6 +28,10 @@ export default function CreateRecipe() {
             rows={30}
           ></textarea>
         </div>
+        <div>
+          <label htmlFor="imageUrl">ImageUrl</label>
+          <input type="text" name="imageUrl" id="imageUrl" />
+        </div>
       </form>
     </div>
   );
