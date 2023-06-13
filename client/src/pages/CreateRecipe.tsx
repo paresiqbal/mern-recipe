@@ -16,6 +16,9 @@ export default function CreateRecipe() {
             rows={30}
           ></textarea>
         </div>
+        <div>
+          <label htmlFor="ingridients">Ingridients</label>
+        </div>
       </form>
     </div>
   );
