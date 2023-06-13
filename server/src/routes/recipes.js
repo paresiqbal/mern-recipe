@@ -48,4 +48,27 @@ router.put("/", async (req, res) => {
   }
 });
 
+// Fetch saved recepies individual
+router.get("/savedRecipes/ids", async (req, res) => {
+  try {
+    const user = await UserModel.findById(req.body.userID);
+    res.json({ savedRecipes: user?.savedRecipes });
+  } catch (error) {
+    res.json(error);
+  }
+});
+
+// Fetch saved all
+router.get("/savedRecipes", async (req, res) => {
+  try {
+    const user = await UserModel.findById(req.body.userID);
+    const savedRecipes = await RecipeModel.find({
+      _id: { $in: user.savedRecipes },
+    });
+    res.json({ savedRecipes });
+  } catch (error) {
+    res.json(error);
+  }
+});
+
 export { router as recipeRouter };
