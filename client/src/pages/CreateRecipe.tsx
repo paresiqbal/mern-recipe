@@ -19,6 +19,15 @@ export default function CreateRecipe() {
         <div>
           <label htmlFor="ingridients">Ingridients</label>
         </div>
+        <div>
+          <label htmlFor="instruction">Instruction</label>
+          <textarea
+            name="instruction"
+            id="instruction"
+            cols={20}
+            rows={30}
+          ></textarea>
+        </div>
       </form>
     </div>
   );
