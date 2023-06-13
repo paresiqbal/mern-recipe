@@ -32,6 +32,10 @@ export default function CreateRecipe() {
           <label htmlFor="imageUrl">ImageUrl</label>
           <input type="text" name="imageUrl" id="imageUrl" />
         </div>
+        <div>
+          <label htmlFor="cookingTime">Cooking Time</label>
+          <input type="number" id="cookingTime" name="cookingTime" />
+        </div>
       </form>
     </div>
   );
