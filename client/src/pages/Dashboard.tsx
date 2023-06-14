@@ -57,7 +57,7 @@ export default function Dashboard() {
               <button
                 onClick={() => saveRecipe(recipe._id)}
                 disabled={isRecipeSaved(recipe._id)}
-                className="bg-gray-200 py-2 px-4 rounded-md"
+                className="bg-base-orange py-2 px-4 rounded-md text-white font-bold"
               >
                 {isRecipeSaved(recipe._id) ? "Saved" : "Save"}
               </button>

@@ -26,7 +26,7 @@ export default function Navbar() {
         className="flex flex-row items-center gap-2 py-2 px-4 hover:outline outline-orange-500 rounded-md"
       >
         <img src={home} alt="" width={20} height={20} />
-        <span className="font-bold text-orange-500">Budgetin</span>
+        <span className="font-bold text-orange-500">Cooking Mama</span>
       </NavLink>
       <div className="flex items-center justify-end gap-4 text-gray-900 font-semibold">
         <Link to={"/CreateRecipe"}>Create</Link>
