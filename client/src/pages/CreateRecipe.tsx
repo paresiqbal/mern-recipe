@@ -1,6 +1,9 @@
 // React
 import { useState } from "react";
 
+// Library
+import axios from "axios";
+
 export default function CreateRecipe() {
   const [recipe, setRecipe] = useState({
     name: "",
@@ -27,11 +30,20 @@ export default function CreateRecipe() {
     setRecipe({ ...recipe, ingridients: [...recipe.ingridients, ""] });
   };
 
-  console.log(recipe);
+  const submitForm = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("http://localhost:3001/recipes", recipe);
+      alert("Recipe Created");
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className="p-10 flex flex-col items-center">
       <h2 className="text-xl font-semibold">Create Recipe</h2>
-      <form action="" className="w-full max-w-md mt-4">
+      <form className="w-full max-w-md mt-4" onSubmit={submitForm}>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Name
