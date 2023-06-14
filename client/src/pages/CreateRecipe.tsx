@@ -4,15 +4,22 @@ import { useState } from "react";
 // Library
 import axios from "axios";
 
+// Hooks
+import { useGetUserID } from "../hooks/useGetUserID";
+import { useNavigate } from "react-router-dom";
+
 export default function CreateRecipe() {
+  const userID = useGetUserID();
   const [recipe, setRecipe] = useState({
     name: "",
     ingridients: [],
     instruction: "",
     imageUrl: "",
     cookingTime: 0,
-    userOwner: 0,
+    userOwner: userID,
   });
+
+  const navigate = useNavigate();
 
   const handleInput = (e: React.FormEvent) => {
     const { name, value } = e.target;
@@ -36,24 +43,30 @@ export default function CreateRecipe() {
     try {
       await axios.post("http://localhost:3001/recipes", recipe);
       alert("Recipe Created");
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
   };
+
   return (
     <div className="p-10 flex flex-col items-center">
       <h2 className="text-xl font-semibold">Create Recipe</h2>
       <form className="w-full max-w-md mt-4" onSubmit={submitForm}>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label
+            htmlFor="name"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
             Name
           </label>
           <input
-            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-            id="name"
             type="text"
+            name="name"
+            id="name"
             placeholder="Name"
             onChange={handleInput}
+            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
           />
         </div>
         <div className="flex flex-col">
