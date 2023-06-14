@@ -49,6 +49,8 @@ export default function CreateRecipe() {
     }
   };
 
+  console.log(recipe);
+
   return (
     <div className="p-10 flex flex-col items-center">
       <h2 className="text-xl font-semibold">Create your Recipe</h2>
@@ -104,16 +106,16 @@ export default function CreateRecipe() {
             htmlFor="instruction"
             className="block text-gray-700 text-sm font-bold mb-2"
           >
-            Instruction
+            instruction
           </label>
-          <textarea
+          <input
+            type="text"
             name="instruction"
             id="instruction"
-            rows={10}
-            placeholder="Insctruction"
+            placeholder="instruction"
             onChange={handleInput}
             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-          ></textarea>
+          />
         </div>
         <div className="flex flex-col">
           <label
