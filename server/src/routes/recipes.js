@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 // Models
 import { RecipeModel } from "../models/Recipes.js";
 import { UserModel } from "../models/Users.js";
+import { verifyToken } from "./users.js";
 
 const router = express.Router();
 
