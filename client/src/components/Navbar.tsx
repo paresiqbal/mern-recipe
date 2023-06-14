@@ -30,7 +30,7 @@ export default function Navbar() {
       </NavLink>
       <div className="flex items-center justify-end gap-4 text-gray-900 font-semibold">
         <Link to={"/CreateRecipe"}>Create</Link>
-        <Link to={"/save-recipe"}>Saved</Link>
+        <Link to={"/SavedRecipes"}>Saved</Link>
         {!cookies.access_token ? (
           <Link
             to={"/Auth"}

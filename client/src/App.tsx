@@ -9,6 +9,7 @@ import Error from "./pages/Error";
 import Dashboard from "./pages/Dashboard";
 import Auth from "./pages/Auth";
 import CreateRecipe from "./pages/CreateRecipe";
+import SavedRecipes from "./pages/SavedRecipes";
 
 // Router setup
 const router = createBrowserRouter([
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
       {
         path: "/CreateRecipe",
         element: <CreateRecipe />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/SavedRecipes",
+        element: <SavedRecipes />,
         errorElement: <Error />,
       },
     ],
