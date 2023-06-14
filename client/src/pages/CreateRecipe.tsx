@@ -51,8 +51,11 @@ export default function CreateRecipe() {
 
   return (
     <div className="p-10 flex flex-col items-center">
-      <h2 className="text-xl font-semibold">Create Recipe</h2>
-      <form className="w-full max-w-md mt-4" onSubmit={submitForm}>
+      <h2 className="text-xl font-semibold">Create your Recipe</h2>
+      <form
+        className="w-full max-w-md mt-4 flex flex-col"
+        onSubmit={submitForm}
+      >
         <div className="mb-4">
           <label
             htmlFor="name"
@@ -84,9 +87,15 @@ export default function CreateRecipe() {
               name="ingridients"
               value={ingridient}
               onChange={(e) => handleIngredientChange(e, idx)}
+              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+              placeholder="Ingridients"
             />
           ))}
-          <button type="button" onClick={addIngridient}>
+          <button
+            type="button"
+            onClick={addIngridient}
+            className="bg-base-orange py-2 px-4 rounded-md text-white"
+          >
             Add Ingridients
           </button>
         </div>
@@ -138,7 +147,12 @@ export default function CreateRecipe() {
             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
           />
         </div>
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          className="bg-base-red py-2 px-4 mt-5 rounded-md text-white font-bold text-xl"
+        >
+          Post Recipe
+        </button>
       </form>
     </div>
   );
