@@ -29,7 +29,7 @@ export default function Navbar() {
         <span className="font-bold text-orange-500">Budgetin</span>
       </NavLink>
       <div className="flex items-center justify-end gap-4 text-gray-900 font-semibold">
-        <Link to={"/create-recipe"}>Create</Link>
+        <Link to={"/CreateRecipe"}>Create</Link>
         <Link to={"/save-recipe"}>Saved</Link>
         {!cookies.access_token ? (
           <Link

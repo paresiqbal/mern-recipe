@@ -8,6 +8,7 @@ import MainLayout from "./layout/MainLayout";
 import Error from "./pages/Error";
 import Dashboard from "./pages/Dashboard";
 import Auth from "./pages/Auth";
+import CreateRecipe from "./pages/CreateRecipe";
 
 // Router setup
 const router = createBrowserRouter([
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
       {
         path: "/Auth",
         element: <Auth />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/CreateRecipe",
+        element: <CreateRecipe />,
         errorElement: <Error />,
       },
     ],
