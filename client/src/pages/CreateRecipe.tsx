@@ -12,8 +12,8 @@ export default function CreateRecipe() {
   const userID = useGetUserID();
   const [recipe, setRecipe] = useState({
     name: "",
-    ingridients: [],
-    instruction: "",
+    ingredients: [],
+    instructions: "",
     imageUrl: "",
     cookingTime: 0,
     userOwner: userID,
@@ -26,15 +26,15 @@ export default function CreateRecipe() {
     setRecipe({ ...recipe, [name]: value });
   };
 
-  const handleIngredientChange = (e: React.FormEvent, idx) => {
+  const handleIngredientChange = (e: React.FormEvent, idx: number) => {
     const { value } = e.target;
-    const ingredients = [...recipe.ingridients];
-    ingredients[idx] = value; // Change `index` to `idx`
-    setRecipe({ ...recipe, ingridients: ingredients }); // Change `ingredients` to `ingridients`
+    const ingredients = [...recipe.ingredients];
+    ingredients[idx] = value;
+    setRecipe({ ...recipe, ingredients: ingredients });
   };
 
   const addIngridient = () => {
-    setRecipe({ ...recipe, ingridients: [...recipe.ingridients, ""] });
+    setRecipe({ ...recipe, ingredients: [...recipe.ingredients, ""] });
   };
 
   const submitForm = async (e: React.FormEvent) => {
@@ -76,21 +76,21 @@ export default function CreateRecipe() {
         </div>
         <div className="flex flex-col">
           <label
-            htmlFor="ingridients"
+            htmlFor="ingredients"
             className="block text-gray-700 text-sm font-bold mb-2"
-            placeholder="Ingridients"
+            placeholder="Ingredients"
           >
-            Ingridients
+            Ingredients
           </label>
-          {recipe.ingridients.map((ingridient, idx) => (
+          {recipe.ingredients.map((ingridient, idx) => (
             <input
               key={idx}
               type="text"
-              name="ingridients"
+              name="ingredients"
               value={ingridient}
               onChange={(e) => handleIngredientChange(e, idx)}
               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-              placeholder="Ingridients"
+              placeholder="Ingredients"
             />
           ))}
           <button
@@ -103,16 +103,16 @@ export default function CreateRecipe() {
         </div>
         <div className="flex flex-col">
           <label
-            htmlFor="instruction"
+            htmlFor="instructions"
             className="block text-gray-700 text-sm font-bold mb-2"
           >
             instruction
           </label>
           <input
             type="text"
-            name="instruction"
-            id="instruction"
-            placeholder="instruction"
+            name="instructions"
+            id="instructions"
+            placeholder="instructions"
             onChange={handleInput}
             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
           />
